@@ -1,10 +1,26 @@
 const addTodoBtn=document.getElementById('addTodoBtn')
 const inputTag=document.getElementById('todoInput')
+const todoListU1=document.querySelector("#todoList")
+
 let TodoText;
 let Todos=[]
 let TodoString=localStorage.getItem('Todos')
 if(TodoString){
     Todos=JSON.parse(TodoString)
+}
+
+const populateTodos=()=>{
+
+    let string=''
+    for(let todo of Todos){
+        string += `<li class="todo-item ${todo.isComplete?'completed':''}" >
+                    <input type="checkbox" class="todo-checkbox ${todo.isComplete?'checked':''}">
+                    <span class="todo-text">${todo.title}</span>
+                    <button class="delete-btn">×</button>
+                </li>`
+    }
+
+    todoListU1.innerHTML=todoListU1.innerHTML + string
 }
 
 addTodoBtn.addEventListener('click',()=>{
@@ -20,3 +36,5 @@ addTodoBtn.addEventListener('click',()=>{
 
 
 })
+
+populateTodos();
