@@ -17,7 +17,3 @@ A simple Todo List application built using **HTML, CSS, and Vanilla JavaScript**
 1. Clone the repository
 2. Open `index.html` in your browser
 
-## Future Improvements
-- Save todos using localStorage
-- Edit todo items
-- Filter completed / pending tasks
